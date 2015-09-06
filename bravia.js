@@ -1,3 +1,4 @@
 exports.turnOn = function() {
-  console.log('Turning TV on');
+  //console.log('On');
+  return "On";
 }
