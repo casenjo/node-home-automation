@@ -1,0 +1,34 @@
+{
+  "name": "node-home-automation",
+  "version": "1.0.0",
+  "description": "App to send out messages to the different components in your home",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casenjo/node-home-automation.git"
+  },
+  "keywords": [
+    "home-automation",
+    "home",
+    "automation",
+    "smarthome",
+    "bravia",
+    "lifx"
+  ],
+  "author": "Cristian Asenjo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/casenjo/node-home-automation/issues"
+  },
+  "homepage": "https://github.com/casenjo/node-home-automation#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3"
+  }
+}
