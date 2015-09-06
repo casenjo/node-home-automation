@@ -1,5 +1,6 @@
-exports.turnOn = function(request) {
-  //console.log('On');
-  console.log(request);
-  return "On";
+var wol = require('wake_on_lan');
+
+exports.turnOn = function(mac) {
+    wol.wake(mac);
+    return true;
 }

@@ -7,8 +7,11 @@ var bodyParser  = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Of course we need a port to talk to
-var port = process.env.PORT || 8020;
+// Of course we need a port to talk to, we'll get that from our config
+var config = require('./config');
+
+// And all the different gadgets in our home
+var bravia = require('./modules/bravia');
 
 // ROUTES
 var router = express.Router();
@@ -17,7 +20,7 @@ var router = express.Router();
 // Routing middleware
 router.use(function(req, res, next) {
     // Log our stuff
-    console.log(req);
+    console.log(req.body);
     next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -26,12 +29,21 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });   
 });
 
-// Register our routes
+// TV routes
+router.route('/tv/on')
+
+    // Receive POST request
+    .post(function(req, res) {
+        bravia.turnOn(config.tv.mac);
+        res.sendStatus(200);
+    });
+
+
+// Register our routes with the home prefix
 app.use('/home', router);
 
-var bravia = require('./modules/bravia');
 
 // START THE SERVER
-app.listen(port);
-console.log('Listening on port ' + port);
+app.listen(8020);
+console.log('Listening on port ' + 8020);
 
