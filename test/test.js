@@ -1,6 +1,6 @@
 var assert = require("assert");
 
-var bravia = require('../bravia');
+var bravia = require('../modules/bravia');
 
 describe('Sony Bravia TV', function() {
   describe('#turnOn()', function () {

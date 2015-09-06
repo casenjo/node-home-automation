@@ -1,6 +1,6 @@
 var http = require('http');
 
-var bravia = require('./bravia');
+var bravia = require('modules/bravia');
 
 var server = http.createServer(function(req, res){
     //console.log("Hello!");
