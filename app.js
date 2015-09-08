@@ -69,6 +69,13 @@ router.route('/tv/volumedown')
         res.sendStatus(200);
     });
 
+router.route('/tv/netflix')
+
+    .post(function(req, res) {
+        tv.sendCmd('Netflix');
+        res.sendStatus(200);
+    });
+
 // Register our routes with the home prefix
 app.use('/home', router);
 
