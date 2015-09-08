@@ -28,3 +28,6 @@ node_modules
 
 # Real config
 config.js
+
+# Auth cookie for TV
+cookie
