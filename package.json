@@ -22,7 +22,7 @@
     "lifx"
   ],
   "author": "Cristian Asenjo",
-  "license": "ISC",
+  "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/casenjo/node-home-automation/issues"
   },
