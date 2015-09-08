@@ -39,6 +39,35 @@ router.route('/tv/on')
         res.sendStatus(200);
     });
 
+router.route('/tv/off')
+
+    // Receive POST request
+    .post(function(req, res) {
+        tv.sendCmd('Power Off');
+        res.sendStatus(200);
+    });
+
+router.route('/tv/hdmi/:id')
+
+    // Receive POST request
+    .post(function(req, res) {
+        tv.sendCmd('HDMI'+req.params.id);
+        res.sendStatus(200);
+    });
+
+router.route('/tv/volumeup')
+
+    .post(function(req, res) {
+        tv.sendCmd('VolumeUp');
+        res.sendStatus(200);
+    });
+
+router.route('/tv/volumedown')
+
+    .post(function(req, res) {
+        tv.sendCmd('VolumeDown');
+        res.sendStatus(200);
+    });
 
 // Register our routes with the home prefix
 app.use('/home', router);
