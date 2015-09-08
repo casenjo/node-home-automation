@@ -11,7 +11,8 @@ app.use(bodyParser.json());
 var config = require('./config');
 
 // And all the different gadgets in our home
-var tv = require('./modules/node-sonytv').SonyTV('host', '/sony/IRCC', '/sony/accessControl', config.app.uuid, config.app.nickname);;
+var tv = require('./modules/node-sonytv').SonyTV(config.tv.hostname, '/sony/IRCC', '/sony/accessControl', config.app.uuid, config.app.nickname);
+tv.loadCookieToken();
 
 // ROUTES
 var router = express.Router();
