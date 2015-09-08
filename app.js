@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 var config = require('./config');
 
 // And all the different gadgets in our home
-var bravia = require('./modules/bravia');
+var tv = require('./modules/node-sonytv').SonyTV('host', '/sony/IRCC', '/sony/accessControl', config.app.uuid, config.app.nickname);;
 
 // ROUTES
 var router = express.Router();
@@ -34,7 +34,7 @@ router.route('/tv/on')
 
     // Receive POST request
     .post(function(req, res) {
-        bravia.turnOn(config.tv.mac);
+        tv.powerOn(config.tv.mac);
         res.sendStatus(200);
     });
 
